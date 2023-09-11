@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Django Delights -- Login{% endblock %}
+
+{% block content %}
+  <div class="login-form">
+    <h2>Login</h2>
+    <form method="post" action="{% url 'login' %}">
+      {% csrf_token %}
+      <label for="username">Username:</label>
+      <input type="text" name="username" placeholder="Username">
+      <label for="password">Password</label>
+      <input type="password" name="password" placeholder="Password">
+      <button class="submit-button" type="submit">Login</button>
+    
+    </form>
+  </div>
+{% endblock %}
